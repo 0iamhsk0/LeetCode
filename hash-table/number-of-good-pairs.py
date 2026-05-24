@@ -1,0 +1,15 @@
+class Solution:
+    def numIdenticalPairs(self, nums: List[int]) -> int:
+        hash_map = {}
+        cnt = 0
+
+        for num in nums:
+            if num in hash_map:
+                cnt += hash_map[num]
+                hash_map[num] += 1
+            else:
+                hash_map[num] = 1
+        
+        return cnt
+
+        
